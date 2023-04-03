@@ -3,7 +3,15 @@ var languageButtonsEl = document.querySelector('#language-buttons');
 var nameInputEl = document.querySelector('#username');
 var repoContainerEl = document.querySelector('#repos-container');
 var repoSearchTerm = document.querySelector('#repo-search-term');
-var APIKey = 7b8a9bb54b18ada4466416f59d222bd4
+var APIKey = '7b8a9bb54b18ada4466416f59d222bd4';
+var city;
+var state;
+
+
+api.openweathermap.org/data/2.5/weather?q={city}&appid={APIKey}
+api.openweathermap.org/data/2.5/weather?q={state}&appid={APIKey}
+weathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+fetch(queryURL)
 
 var formSubmitHandler = function (event) {
   event.preventDefault();
