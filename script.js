@@ -1,4 +1,4 @@
-var APIKey = '7b8a9bb54b18ada4466416f59d222bd4';
+var apiKey = "1b18ce13c84e21faafb19c931bb29331";
 var savedSearches = [];
 var searchHistoryList = function (cityName) {
     $('.past-search:contains("' + cityName + '")').remove();
@@ -48,8 +48,8 @@ var loadSearchHistory = function () {
 
 var currentWeatherSection = function (cityName) {
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`)
-        /
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
+        
         .then(function (response) {
             return response.json();
         })
@@ -58,7 +58,7 @@ var currentWeatherSection = function (cityName) {
                 var cityLon = response.coord.lon;
                 var cityLat = response.coord.lat;
 
-                fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${APIKey}`)
+                fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`)
 
                     .then(function (response) {
                         return response.json();
@@ -119,7 +119,8 @@ var currentWeatherSection = function (cityName) {
 
 var fiveDayForecastSection = function (cityName) {
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`)
+    
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
 
         .then(function (response) {
             return response.json();
@@ -129,7 +130,7 @@ var fiveDayForecastSection = function (cityName) {
             var cityLon = response.coord.lon;
             var cityLat = response.coord.lat;
 
-            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${APIKey}`)
+            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`)
 
                 .then(function (response) {
                     return response.json();
@@ -195,17 +196,9 @@ $("#search-history-container").on("click", "p", function () {
     currentWeatherSection(previousCityName);
     fiveDayForecastSection(previousCityName);
 
-    //
+    
     var previousCityClicked = $(this);
     previousCityClicked.remove();
 });
-
 loadSearchHistory();
-button.addEventListener('click', function () {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + input.value + '&appid=7b8a9bb54b18ada4466416f59d222bd4')
-        .then(response => response.json())
-        .then(data => console.log(data))
-
-})
-
 
