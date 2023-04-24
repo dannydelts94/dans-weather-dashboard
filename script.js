@@ -48,7 +48,7 @@ var loadSearchHistory = function () {
 
 var currentWeatherSection = function (cityName) {
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`)
         /
         .then(function (response) {
             return response.json();
@@ -58,7 +58,7 @@ var currentWeatherSection = function (cityName) {
                 var cityLon = response.coord.lon;
                 var cityLat = response.coord.lat;
 
-                fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`)
+                fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${APIKey}`)
 
                     .then(function (response) {
                         return response.json();
@@ -119,7 +119,7 @@ var currentWeatherSection = function (cityName) {
 
 var fiveDayForecastSection = function (cityName) {
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`)
 
         .then(function (response) {
             return response.json();
@@ -129,7 +129,7 @@ var fiveDayForecastSection = function (cityName) {
             var cityLon = response.coord.lon;
             var cityLat = response.coord.lat;
 
-            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`)
+            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${APIKey}`)
 
                 .then(function (response) {
                     return response.json();
