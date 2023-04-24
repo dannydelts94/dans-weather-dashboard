@@ -18,3 +18,6 @@ MIT
 
 ## Deployed Link and Screenshot 
 
+[deployed app](https://dannydelts94.github.io/dans-weather-dashboard/)
+
+![Screenshot of weather dashboard](/assets/screencapture-localhost-52330-index-html-2023-04-23-21_28_15.png)
